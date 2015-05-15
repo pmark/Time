@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Clock" representedClassName="Clock" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalMinutes" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="timeEntries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeEntry" inverseName="clock" inverseEntity="TimeEntry" syncable="YES"/>
+    </entity>
+    <entity name="TimeEntry" representedClassName="TimeEntry" syncable="YES">
+        <attribute name="endTime" optional="YES" attributeType="Date" defaultDateTimeInterval="0" defaultValueString="NULL" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" defaultDateTimeInterval="0" defaultValueString="NULL" syncable="YES"/>
+        <relationship name="clock" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Clock" inverseName="timeEntries" inverseEntity="Clock" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Clock" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="TimeEntry" positionX="-9" positionY="144" width="128" height="75"/>
+    </elements>
+</model>
